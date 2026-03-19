@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...)
 {
@@ -37,6 +38,10 @@ letter += write(1, s, 1);
 else if (*format == '%')
 {
 letter += write (1, "%", 1);
+}
+else if (*format == 'd' || *format == 'i')
+{
+letter += printf_int(va_arg(args, int));
 }
 else
 {
