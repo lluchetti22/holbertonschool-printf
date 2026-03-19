@@ -33,8 +33,11 @@ letter += write(1, &c, 1);
 else if (*format == 's')
 {
 s = va_arg(args, char *);
+while (*s != '\0')
+{
 letter += write(1, s, 1);
 s++;
+}
 } 
 else if (*format == '%')
 {
