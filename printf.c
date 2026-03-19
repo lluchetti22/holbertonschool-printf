@@ -28,7 +28,7 @@ format++;
 if (*format == 'c')
 {
 c = va_arg(args, int);
-letter += write(1, c, 1);
+letter += write(1, &c, 1);
 } 
 else if (*format == 's')
 {
