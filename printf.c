@@ -33,6 +33,12 @@ letter += write(1, &c, 1);
 else if (*format == 's')
 {
 s = va_arg(args, char *);
+
+if (!s)
+{
+s = "(null)";
+}
+
 while (*s != '\0')
 {
 letter += write(1, s, 1);
