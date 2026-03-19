@@ -53,11 +53,7 @@ else if (*format == 'd' || *format == 'i')
 {
 letter += printf_int(va_arg(args, int));
 }
-else
-{
-letter += write (1, "%", 1);
-letter += write (1, format, 1);
-}
+
 
 }
 else
