@@ -20,7 +20,7 @@ va_start(args, format);
 while(*format != '\0')
 {
 
-if (*format == '%' && *(format + 1) != NULL)
+if (*format == '%' && *(format + 1) != '\0')
 {
 
 format++;
