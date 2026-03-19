@@ -20,7 +20,7 @@ va_start(args, format);
 while(*format != '\0')
 {
 
-if (*format == '%' && (*(format + 1) != '\0'))
+if (*format == '%' && *(format + 1) != '\0')
 {
 
 format++;
@@ -59,6 +59,10 @@ letter += write (1, "%", 1);
 letter += write (1, format, 1);
 }
 
+}
+else if (*format == '%' && *(format + 1) == '\0')
+{
+break;
 }
 else
 {
