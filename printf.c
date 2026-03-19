@@ -62,6 +62,7 @@ letter += write (1, format, 1);
 }
 else if (*format == '%' && *(format + 1) == '\0')
 {
+return (-1);
 }
 else
 {
