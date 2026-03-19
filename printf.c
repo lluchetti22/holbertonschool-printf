@@ -34,6 +34,7 @@ else if (*format == 's')
 {
 s = va_arg(args, char *);
 letter += write(1, s, 1);
+s++;
 } 
 else if (*format == '%')
 {
