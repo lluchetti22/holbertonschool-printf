@@ -1,0 +1,71 @@
+.\" Man page for _pritnf
+.TH _PRINTF 3 "March 2026" "man_3_printf"
+.SH NAME
+_printf \- custom printf function
+
+.SH REQUIREMENTS TO USE
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+Also, if you must view this man page, i like to use ' groff -man -Tascii man_3_printf | less '
+
+.SH DESCRIPTION
+This functions acts as a simplified printf standard function.
+
+It writes out a standard output by using write.
+
+The format string can handle text and these conversion specifiers:
+
+.TP
+%c
+Characters
+
+.TP
+%s
+Strings
+
+.TP
+%d and %i
+Integers
+
+.TP
+%%
+Prints a percentage sign
+
+If extra arguments are given such as _printf("hello %s\n", "world", 1, 2, 3, 4) they are ignored
+
+If a percentage sign is at the end of 'format' it is ignored
+
+.SH RETURN VALUE
+If the return goes through, _printf returns the number of characters printed (excluding the null byte)
+
+.SH EXAMPLES
+_printf("hello %s\n", "world", 1, 2, 3, 4);
+.br
+Output: hello world
+
+_printf("Jay Z's problems: %i\n", 99);
+.br
+Output: Jay Z's problems: 99
+
+_printf("%");
+.br
+There is no output here
+
+.SH LIMITATIONS
+If a converter that isnt used in the project is given, eg %x, it will simply print %x as the code isnt set up to handle these specifiers.
+.br
+Other more complex flags are ignored. 
+.br
+This was just 2 guys in a week cmon
+
+.SH AUTHORS
+Lachlan Luchetti
+.br
+Sam Thompson
+
+.SH REPORTING BUGS
+Its not that deep, but message me at sam.a.thompson2001@gmail.com , lachy doesnt have to know.
+.br
+alternatively, if you feel very strongly let the Irish embassy know, they can deal with me, tel: +61 2 62140000
